@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <title>Crud</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>CRUD</h1>
+    </header>
+
+    <div class="contenedor-modal" id="modalEliminar">
+        <div class="modal">
+            <div class="header-modal">
+                <div class="titulo-modal">Eliminar</div>
+                <div class="cerrar-modal">&#215;</div>
+            </div>
+            <div class="body-modal">
+                Seguro Desea Eliminar?
+            </div>
+            <div class="footer-modal">
+                <button id="btn-eliminar" class="btn btn-success">Eliminar</button>
+                <button id="btn-cancelar" class="btn btn-remove">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="seccion-formulario">
+        <form action="" id="formulario">
+
+            <div class="inputs">
+                <input type="number" min="0" step="1" id="id" required autocomplete="off" placeholder="Identificación">
+                <input type="text" id="nombre" required autocomplete="off" placeholder="Nombre">
+                <input type="text" id="apellido" required autocomplete="off" placeholder="Apellido">
+                <input type="number" id="telefono" required autocomplete="off" placeholder="Teléfono">
+                <div class="botones-formulario">
+                    <button id="btn_agregar" class="btn btn-success">Agregar</button>
+                    <button id="btn_limpiar" class="btn btn-remove">Limpiar</button>
+                </div>
+            </div>
+
+        </form>
+    </section>
+
+    <section class="seccion-tabla">
+        <table class="tabla" id="tabla">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Teléfono</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpo">
+                <!-- filas -->
+            </tbody>
+        </table>
+    </section>
+
+    <script defer src="./assets/js/index.js" type="module"></script>
+</body>
+
+</html>
