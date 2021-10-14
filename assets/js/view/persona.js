@@ -87,12 +87,18 @@ export class VPersona {
     }
 
     onDblClick(e) {
-        for (let i = 0; i < this.inputs.length; i++) {
+        /* for (let i = 0; i < this.inputs.length; i++) {
             this.inputs[i].value = e.target.parentNode.children[i].textContent;
         }
         this.cuerpo.removeChild(e.target.parentNode);
         this.inputs[0].setAttribute('readonly', '');
-        this.btnAgregar.textContent = 'Actualizar';
+        this.btnAgregar.textContent = 'Actualizar'; */
+        let modalA = new VentanaModal(modalActualizar);
+        let inputsA = modalActualizar.querySelectorAll('input');
+        for (let i = 0; i < this.inputs.length; i++) {
+            inputsA[i].value = e.target.parentNode.children[i].textContent;
+        }
+        modalA.abrir();
     }
 
     showData() {

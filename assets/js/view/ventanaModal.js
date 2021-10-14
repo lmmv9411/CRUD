@@ -11,16 +11,16 @@ export class VentanaModal {
   abrir() {
     this.cmodal.style.visibility = 'visible';
     this.cmodal.style.opacity = '1';
-    this.modal.classList.toggle('show-modal');
+    this.modal.classList.add('show-modal');
   }
 
   cerrarModal() {
-    this.modal.classList.toggle('show-modal');
-    
+    this.modal.classList.remove('show-modal');
+
     setTimeout(() => {
       this.cmodal.style.visibility = 'hidden';
       this.cmodal.style.opacity = '0';
-    }, 200);
+    }, 400);
   }
 
   cerrarControl(e) {
