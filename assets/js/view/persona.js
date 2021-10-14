@@ -28,7 +28,7 @@ export class VPersona {
     }
 
     onClick(e) {
-        e.preventDefault();
+        
         let elm = e.target.textContent;
 
         switch (elm) {
@@ -53,6 +53,14 @@ export class VPersona {
             case 'Agregar':
 
                 let persona = this.getPersona();
+                
+                for(let inpt of this.inputs){
+                  
+                  if(inpt.hasAttribute('required') &&
+                     inpt.value === ''){
+                       return;
+                     }
+                }
 
                 if (this.dao.mostrar(persona.id) === null) {
                     this.dao.guardar(persona);
@@ -73,6 +81,8 @@ export class VPersona {
                 this.limpiar();
                 break;
         }
+        
+        e.preventDefault();
 
     }
 
