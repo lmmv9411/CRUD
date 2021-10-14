@@ -9,10 +9,15 @@ export class PersonaDAO {
     mostrarTodo() {
         let all = [];
         const keys = Object.keys(localStorage);
+        ///console.log(keys);
         
         for(let key of keys){
+            
             let tmp = JSON.parse(localStorage.getItem(key));
-            all.push(tmp)
+            
+            if (tmp.id !== undefined){
+              all.push(tmp)
+            }
         }
 
         return all;
@@ -20,6 +25,7 @@ export class PersonaDAO {
     }
 
     eliminar(id){
+      console.log(id);
         localStorage.removeItem(id);
     }
 }
