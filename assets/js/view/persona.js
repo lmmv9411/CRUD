@@ -14,13 +14,11 @@ export class VPersona {
 
         this.btnAgregar.addEventListener('click', e => this.onClick(e));
 
-        document.getElementById('btn_limpiar').
-            addEventListener('click', e => this.onClick(e));
+        btn_limpiar.addEventListener('click', e => this.onClick(e));
 
-        document.getElementById('btn-eliminar').
-            addEventListener('click', e => this.onClick(e))
+        btn_eliminar.addEventListener('click', e => this.onClick(e));
 
-        document.getElementById('btn-cancelar').addEventListener('click', e => this.modal.cerrarModal())
+        btn_cancelar.addEventListener('click', e => this.modal.cerrarModal());
 
         this.cuerpo.addEventListener('click', e => this.onClick(e));
 
@@ -37,7 +35,7 @@ export class VPersona {
             case 'Eliminar':
                 let row = e.target.parentNode.parentNode;
 
-                if (e.target.id === 'btn-eliminar') {
+                if (e.target.id === 'btn_eliminar') {
                     this.cuerpo.removeChild(this.filaEliminar);
                     this.dao.eliminar(this.filaEliminar.children[0].textContent);
                     this.modal.cerrarModal();
