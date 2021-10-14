@@ -22,10 +22,10 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*Hola Luis*/
 }
 
-.inputs input{
+.control-formulario{
+    width: 100%;
     padding: 5px;
     margin-bottom: 10px;
     font-size: 20px;
@@ -154,7 +154,7 @@ header{
 }
 
 .cerrar-modal{
-    margin-right: 5px;
+    margin-right: 15px;
     font-size: 2em;
     color: white;
     cursor: pointer;
@@ -184,7 +184,7 @@ header{
 
 /*--Fin ventanas modales--*/
 
-@media screen and (max-width:400px) {
+@media screen and (max-width: 400px){
     .inputs input{
         width: 270px;
     }
@@ -199,5 +199,4 @@ header{
     .modal {
         width: 90%;
       }
-
 }

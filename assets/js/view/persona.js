@@ -9,6 +9,7 @@ export class VPersona {
         this.cuerpo = document.getElementById('cuerpo');
         this.dao = new PersonaDAO();
         this.modal = new VentanaModal(modalEliminar);
+        this.modalA = new VentanaModal(modalActualizar);
         this.filaEliminar = null;
         this.btnAgregar = document.getElementById('btn_agregar');
 
@@ -18,17 +19,23 @@ export class VPersona {
 
         btn_eliminar.addEventListener('click', e => this.onClick(e));
 
-        btn_cancelar.addEventListener('click', e => this.modal.cerrarModal());
-
         this.cuerpo.addEventListener('click', e => this.onClick(e));
 
         this.cuerpo.addEventListener('dblclick', e => this.onDblClick(e))
+
+        modalEliminar.querySelector('.btn-success')
+            .addEventListener('click', e => this.modal.cerrarModal());
+
+        modalActualizar.querySelector('.btn-remove')
+            .addEventListener('click', e => this.modalA.cerrarModal());
+
+        btn_actualizar.addEventListener('click', e => this.onClick(e));
 
         this.showData();
     }
 
     onClick(e) {
-        
+
         let elm = e.target.textContent;
 
         switch (elm) {
@@ -53,13 +60,13 @@ export class VPersona {
             case 'Agregar':
 
                 let persona = this.getPersona();
-                
-                for(let inpt of this.inputs){
-                  
-                  if(inpt.hasAttribute('required') &&
-                     inpt.value === ''){
-                       return;
-                     }
+
+                for (let inpt of this.inputs) {
+
+                    if (inpt.hasAttribute('required') &&
+                        inpt.value === '') {
+                        return;
+                    }
                 }
 
                 if (this.dao.mostrar(persona.id) === null) {
@@ -71,34 +78,39 @@ export class VPersona {
                 this.inputs[0].focus();
                 break;
             case 'Actualizar':
-                let p = this.getPersona();
+                const p = new Persona();
+                const inputsA = modalActualizar.querySelectorAll('input');
+
+                p.id = inputsA[0].value;
+                p.nombre = inputsA[1].value;
+                p.apellido = inputsA[2].value;
+                p.telefono = inputsA[3].value;
+
                 this.dao.guardar(p);
                 this.insertarFila(p);
-                this.limpiar();
-                this.inputs[0].focus();
+                this.modalA.cerrarModal();
+                
                 break;
             case 'Limpiar':
                 this.limpiar();
                 break;
         }
-        
+
         e.preventDefault();
 
     }
 
     onDblClick(e) {
-        /* for (let i = 0; i < this.inputs.length; i++) {
-            this.inputs[i].value = e.target.parentNode.children[i].textContent;
-        }
-        this.cuerpo.removeChild(e.target.parentNode);
-        this.inputs[0].setAttribute('readonly', '');
-        this.btnAgregar.textContent = 'Actualizar'; */
-        let modalA = new VentanaModal(modalActualizar);
-        let inputsA = modalActualizar.querySelectorAll('input');
+        const row = e.target.parentNode;
+        const inputsA = modalActualizar.querySelectorAll('input');
+
         for (let i = 0; i < this.inputs.length; i++) {
-            inputsA[i].value = e.target.parentNode.children[i].textContent;
+            inputsA[i].value = row.children[i].textContent;
         }
-        modalA.abrir();
+
+        this.cuerpo.removeChild(row);
+
+        this.modalA.abrir();
     }
 
     showData() {

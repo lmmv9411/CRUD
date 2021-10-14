@@ -26,7 +26,7 @@
             </div>
             <div class="footer-modal">
                 <button id="btn_eliminar" class="btn btn-remove">Eliminar</button>
-                <button id="btn_cancelar" class="btn btn-success">Cancelar</button>
+                <button class="btn btn-success">Cancelar</button>
             </div>
         </div>
     </div>
@@ -39,15 +39,15 @@
             </div>
             <div class="body-modal">
                 <div class="inputs">
-                    <input type="number" min="0" step="1" id="id" required placeholder="Identificación"
+                    <input class="control-formulario" type="number" min="0" step="1" id="id" required placeholder="Identificación"
                         autocomplete="off">
-                    <input type="text" id="nombre" required placeholder="Nombre" autocomplete="off">
-                    <input type="text" id="apellido" required placeholder="Apellido" autocomplete="off">
-                    <input type="number" id="telefono" required placeholder="Teléfono" autocomplete="off">
+                    <input class="control-formulario" type="text" id="nombre" required placeholder="Nombre" autocomplete="off">
+                    <input class="control-formulario" type="text" id="apellido" required placeholder="Apellido" autocomplete="off">
+                    <input class="control-formulario" type="number" id="telefono" required placeholder="Teléfono" autocomplete="off">
                 </div>
             </div>
             <div class="footer-modal">
-                <button class="btn btn-success">Actualizar</button>
+                <button id="btn_actualizar" class="btn btn-success">Actualizar</button>
                 <button class="btn btn-remove">Cancelar</button>
             </div>
         </div>
@@ -57,10 +57,10 @@
         <form action="" id="formulario">
 
             <div class="inputs">
-                <input type="number" min="0" step="1" id="id" required autocomplete="off" placeholder="Identificación">
-                <input type="text" id="nombre" required autocomplete="off" placeholder="Nombre">
-                <input type="text" id="apellido" required autocomplete="off" placeholder="Apellido">
-                <input type="number" id="telefono" required autocomplete="off" placeholder="Teléfono">
+                <input class="control-formulario" type="number" min="0" step="1" id="id" required autocomplete="off" placeholder="Identificación">
+                <input class="control-formulario" type="text" id="nombre" required autocomplete="off" placeholder="Nombre">
+                <input class="control-formulario" type="text" id="apellido" required autocomplete="off" placeholder="Apellido">
+                <input class="control-formulario" type="number" id="telefono" required autocomplete="off" placeholder="Teléfono">
                 <div class="botones-formulario">
                     <button id="btn_agregar" class="btn btn-success">Agregar</button>
                     <button id="btn_limpiar" class="btn btn-remove">Limpiar</button>
