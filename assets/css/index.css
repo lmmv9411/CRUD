@@ -21,6 +21,7 @@ header{
 .inputs{
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .inputs input{
