@@ -128,7 +128,6 @@ header{
     background-color: rgb(50, 50, 50);
     color: white;
     height: auto;
-    z-index: 100;
     transition: .6s ease all;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
     transform: translateY(-200%);
@@ -153,7 +152,7 @@ header{
     padding: 15px;
 }
 
-.cerrar-modal{
+.btn-cerrar-modal{
     margin-right: 15px;
     font-size: 2em;
     color: white;
@@ -162,7 +161,7 @@ header{
     padding: 0 3px;
 }
 
-.cerrar-modal:hover{
+.btn-cerrar-modal:hover{
     border: 3px solid rgba(73, 122, 150, 0.3);
 }
 

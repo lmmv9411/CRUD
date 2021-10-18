@@ -2,7 +2,7 @@ export class VentanaModal {
   constructor(cmodal) {
     this.cmodal = cmodal;
     this.modal = this.cmodal.querySelector('.modal');
-    this.cerrar = this.modal.querySelector('.cerrar-modal');
+    this.cerrar = this.modal.querySelector('.btn-cerrar-modal');
 
     this.cerrar.addEventListener('click', () => this.cerrarModal());
     this.cmodal.addEventListener('click', e => this.cerrarControl(e));
